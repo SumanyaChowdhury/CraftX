@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  
+
+<body>
+  <style>
+  
+
+
+
+
+    * {
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: montserrat;
+      font-family: 'Roboto Slab', serif;
+      
+    }
+
+    nav {
+      background: #0082e6;
+      height: 80px;
+      width: 100%;
+
+      width: 100%;
+      ;
+    }
+
+    label.logo {
+      color: white;
+      font-size: 35px;
+      line-height: 80px;
+      padding: 0 100px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      float: right;
+      margin-right: 20px;
+    }
+
+    nav ul li {
+      display: inline-block;
+      line-height: 80px;
+      margin: 0 5px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: 17px;
+      padding: 7px 13px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    a.active,
+    a:hover {
+      background: #1b9bff;
+      transition: .5s;
+    }
+
+    .checkbtn {
+      font-size: 30px;
+      color: white;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display: none;
+    }
+
+    #check {
+      display: none;
+    }
+
+    @media (max-width: 952px) {
+      label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+      }
+
+      nav ul li a {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 858px) {
+      .checkbtn {
+        display: block;
+      }
+
+      ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+      }
+
+      nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+      }
+
+      nav ul li a {
+        font-size: 20px;
+      }
+
+      a:hover,
+      a.active {
+        background: none;
+        color: #0082e6;
+      }
+
+      #check:checked~ul {
+        left: 0;
+      }
+    }
+
+    section {
+      background: url(bg1.jpg) no-repeat;
+      background-size: cover;
+      height: calc(100vh - 80px);
+    }
+
+    .header {
+      padding: 60px;
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+      font-size: 30px;
+    }
+
+    img {
+      float: left;
+    }
+
+
+    html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica', sans-serif;
+      background: rgb(26, 188, 156);
+      background: -moz-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+      background: -webkit-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+      background: linear-gradient(135deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 10px 0 0 0;
+      font-weight: lighter;
+      text-transform: uppercase;
+      color: #eeeeee;
+    }
+
+    p {
+      font-size: 92px;
+      font-weight: light;
+      color: #333333;
+     }
+
+    span a {
+      font-size: 18px;
+      color: #cccccc;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+
+    @keyframes float {
+      0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+      }
+
+      50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+      }
+
+      100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+      }
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 350px;
+      height: 350px;
+      box-sizing: border-box;
+      border: 5px white solid;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+      animation: float 6s ease-in-out infinite;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .content {
+      width: 100%;
+      max-width: 600px;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .suppoprt-me {
+      display: inline-block;
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      width: 20vw;
+      max-width: 250px;
+      min-width: 200px;
+      z-index: 9;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">CraftX eStore</label>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="craftx.html">About Us</a></li>
+      <li><a href="ourproducts.html">Our Products</a></li>
+      <li><a href="contact us.html">feedback</a></li>
+      <li><a href="signup.html">Log in/Sign Up</a></li>
+      <li><a href="aboutus.html ">Our Team</a></li>
+    </ul>
+  </nav>
+  <div class="header">
+    <h1>Welcome to CraftX</h1>
+    
+    <p style="font-size:25px;">A marketplace for unique handicraft products and creative goods</p>
+
+  </div>
+
+  <!-- <h1 style="text-align: center;">About CraftX</h1> -->
+
+
+
+
+  <p style="font-size: 34px;"></p>
+
+
+
+  <br>
+  <br>
+
+  <h1 style="text-align: center;font-size: 25px;">TERRAKOTA</h1>
+  <br>
+
+  <div class="container">
+    <div class="avatar">
+      <a href="https://codepen.io/MarioDesigns/">
+        <img src="terra.jpg" alt="Skytsunami" />
+      </a>
+    </div>
+    <div class="content">
+      <h1></h1>
+      <p style="font-size: 25px;text-align:justify;">When the Central Cottage Industries Emporium, founded in 1952, chose the ‘Bankura Horse’ as its logo, it lifted the little known terracotta art of West Bengal to global fame. Bishnupur, in Bankura district, about 200km west of Kolkata, is home to terracotta temples covered with intricately carved tiles depicting tales from Ramayana, Mahabharata, life of Krishna, etc. Apart from temples, artists used to fashion small toys for use in local religious ceremonies, such as Manasar Chaali (a votive object representing the snake goddess Manasa), horses with pointed ears, and elephants. As handcrafted ethnic products began to gain popularity, artists began to make these ritualistic objects as decorative pieces. Apart from animals, they began to make costume jewellery and other accessories, wall decorations, utility items such as pen holder, bowls and ash trays, etc.  In winter, when Bishnupur receives the most tourists in the seasonal times, the road side is choc a bloc with craft stalls. However, to see the artefacts being made, you have to visit Panchmura, about 20km by road from Bishnupur.
+
+      </p>
+      <br>
+
+    </div>
+  </div>
+
+
+<br>
+
+
+  <div>
+    <h1 style="text-align: center;font-size: 25px;">DOKRA</h1>
+    <br>
+    <div class="container">
+      <div class="avatar">
+        <a href="ourproducts.html">
+          <img src="dokra1.jpg" alt="Skytsunami" />
+        </a>
+      </div>
+      <div class="content">
+        <h1></h1>
+
+        <p style="font-size: 25px;text-align: justify">Dokra (or Dhokra), an ancient form of non-ferrous metal casting using the lost-wax process, has been known to indigenous people of India since the Indus Valley Civilisation. It is believed that tribes in central India (now largely Chhattisgarh) were the practitioners of this art, which later spread to other regions of the country. Dariyapur in Purba Bardhhaman district, nearly 140km from Kolkata via Guskara, is home to a group of dokra artists, who, have been practising this art for nearly 120 years. The process of metal casting is a long drawn process. Artisans have to procure brass pieces for melting, which are not easy to come by. Besides, each object has to be made in its own mould, which is broken apart to retrieve the object. This makes each dokra item unique. Popular Dokra products include idols of Durga and Ganesh, elephants and other animals, human figurines, jewellery, utility items, etc.
+        </p>
+
+        <p></p>
+      </div>
+    </div>
+
+    <h1 style="text-align: center;font-size: 25px;">MADHUBANI PAINTINGS</h1>
+    </BR>
+    <div class="container">
+      <div class="avatar">
+        <a href="ourproducts.html">
+          <img src="madhu1.jpg" alt="Skytsunami" />
+        </a>
+      </div>
+      <div class="content">
+        <!-- <h1>Dokra</h1> -->
+
+        <p style="font-size: 25px;text-align: justify">Madhubani Art is a folk art practiced in Mithila (in present-day Bihar) region of India. it is characterised by its eye-catching geometric patterns. This art form has been used in its home region to decorate homes and to invite the favour of the gods. However, its popularity is so widespread that it’s immediately recognizable as ‘Indian’ art.</p>
+
+
+        <p style="font-size: 20px;"></p>
+      </div>
+    </div>
+
+
+    <div>
+      <h1 style="text-align: center;font-size: 25px;">STONECRAFT of RURAL INDIA</h1>
+      <br>
+      <br>
+      <div class="container">
+        <div class="avatar">
+          <a href="ourproducts.html">
+            <img src="ganesh.jpg" alt="Skytsunami" />
+          </a>
+        </div>
+        <div class="content">
+          <h1></h1>
+
+          <p style="font-size: 25px;text-align: justify;">Stone carving is a very ancient tradition in Bihar. The craft achieved its zenith during the Mauryan period and its finest examples are the rock-cut caves of Barabar and Nagarjuni Hills in Jahanabad District.
+
+            Various stupas and monasteries stand as the great exhibits of the excellent artistic quality of the artisans of Bihar. Amongst the most famous stone carvings of Bihar are the Ashoka pillars at Lauria Nandangarh and Koluha, along with Mundeshwari Temple Complex of Gupta period. This art is practiced at Patharkatti in Gaya district. It is one of the major centres of stone craft in Bihar. The basic raw material used in this craft is marble and Granite. This is a unique product handcrafted by artisans. This craft provides livelihood support to about 500-700 artisans family on regular basis in Gaya district of Bihar. Other centres of the stone craft in Bihar are in Nalanda, Kaimur and Patna.
+            </p>
+          
+        </div>
+      </div>
+
+       <div>
+      <h1 style="text-align: center;font-size: 25px;">Purulia Chhao Mask</h1>
+      <br>
+      <br>
+      <div class="container">
+        <div class="avatar">
+          <a href="ourproducts.html">
+            <img src="Puruliacho.jpg" alt="Skytsunami" />
+          </a>
+        </div>
+        <div class="content">
+          <h1></h1>
+
+          <p style="font-size: 25px;text-align: justify">Along with Mayurbhanj in Odisha, and Seraikela and Kharsawan in Jharkhand, Purulia in West Bengal is known for its Chhau (also Chau) dance. What sets apart the Purulia style from others is the use of elaborate masks (smaller masks are used in Seraikela while the other two do not use masks). One of the best places to watch the making of masks is Charida (pronounced Chorida) village at the base of Ajodhya hill. Mask making is an elaborate process.  Besides, they cannot be heavy yet have to last enough to stand the vigorous dancing, including somersaults and jumps. In simple terms, a mask is made of paper, cloth and clay on moulds made of mud; then it is painted, varnished, and decorated with feathers, etc. Eye holes are made to allow the dancer to see. A mask is representative of the character a dancer portrays and hence there is a fixed colour scheme, such as Shiva is white, Durga is yellow, demons are black or green, etc. As Chhau performance is a seasonal affair, the mask makers now produce smaller mask for use as wall decorations. Charida is about 60km from Purulia town
+
+          </p>
+          
+        </div>
+      </div>
+       
+
+      <div>
+        <h1 style="text-align: center;font-size: 25px;">Handmade Madur</h1>
+        <br>
+        <br>
+        <div class="container">
+          <div class="avatar">
+            <a href="ourproducts.html">
+              <img src="madur.jpg" alt="Skytsunami" />
+            </a>
+          </div>
+          <div class="content">
+            <h1></h1>
+  
+            <p style="font-size: 25px;text-align: justify;">Essentially, madur is a mat made by weaving a rhizome-based plant (madur kathi). It was a must at every traditional household, especially in the rural areas. It would be rolled up and kept in a corner of the room to be spread out as a floor covering to sit or sleep upon. Householders spreading out a madur to an arriving guest was a sign of being made welcome. An eco-friendly local craft from the former Midnapur district of West Bengal, it was on the verge of extinction until the artists were imparted training in making decorative and utility products, such as table runners and mats, purses and bags, curtains, holders, etc. Although the power loom has been introduced for weaving to keep prices competitive, head to Sabang in Paschim Medinipur district for its fine handmade mats called Masland or Mataranchi. Woven with specially prepared fine sticks and cotton threads, they are characterised by coloured patterns. Sabang and its surrounding villages are about four hours’ drive from Kolkata. Banglanatakdot com (http://banglanatak.com/) has announced two festivals – at Sabang (Dec 7-9, 2018) and at Digha (Jan 8-9) – to promote the craft to a wide audience.
+
+              </p>
+  
+           
+          </div>
+        </div>
+
+
+        <div>
+          <h1 style="text-align: center;font-size: 25px;">handmade bamboo flute</h1>
+          <br>
+          <br>
+          <div class="container">
+            <div class="avatar">
+              <a href="ourproducts.html">
+                <img src="flute1.jpg" alt="Skytsunami" />
+              </a>
+            </div>
+            <div class="content">
+              <h1></h1>
+    
+              <p style="font-size: 25px;text-align: justify;">Bamboo has long been used by indigenous cultures to make everything from tiki huts to watermills. Because the plant species is so versatile and strong, it can be used for almost anything. That includes instruments too. Today, it continues to be used for a variety for things such as flooring, material and even paper. But when it’s carved properly, bamboo also makes beautiful music.
+              </p>
+             
+            </div>
+          </div>
+           
+
+
+          <div>
+            <h1 style="text-align: center;font-size: 25px;">handmade earthen products</h1>
+            <br>
+            <br>
+            <div class="container">
+              <div class="avatar">
+                <a href="ourproducts.html">
+                  <img src="pot.jpg" alt="Skytsunami" />
+                </a>
+              </div>
+              <div class="content">
+                <h1></h1>
+      
+                <p style="font-size: 25px;text-align: justify;">Clay-based pottery can be divided into three main groups: earthenware, stoneware and porcelain. These require increasingly more specific clay material, and increasingly higher firing temperatures. All three are made in glazed and unglazed varieties, for different purposes. All may also be decorated by various techniques. In many examples the group a piece belongs to is immediately visually apparent, but this is not always the case. The fritware of the Islamic world does not use clay, so technically falls outside these groups. Historic pottery of all these types is often grouped as either "fine" wares, relatively expensive and well-made, and following the aesthetic taste of the culture concerned, or alternatively "coarse", "popular", "folk" or "village" wares, mostly undecorated, or simply so, and often less well-made.
+      
+                </p>
+               
+              </div>
+            </div>
+              <br>
+              <br>
+            <div>
+              <h1 style="text-align: center;font-size: 25px;"> wodden handicrafts</h1>
+              <br>
+              <br>
+              <div class="container">
+                <div class="avatar">
+                  <a href="ourproducts.html">
+                    <img src="wooden1.jpg" alt="Skytsunami" />
+                  </a>
+                </div>
+                <div class="content">
+                  <h1></h1>
+        
+                  <p style="font-size: 25px;text-align: justify;">Wood carving is one of the oldest art forms for making decorative wooden products. It is the process of decorating wood by hand with the help of a sharp tool. Wood carving involves the use of various steps such as blocking, surfacing and smoothening. The tools may include chisels, v-tools and other carving tools. Wood carving is used for making various wooden figures, idols, even ornaments. The making of sculpture by wood carving art has been extremely widely practised.
+                 
+              </div>
+<br>
+<br>
+
+
+                  </p>
+                  
+                  <br>
+                  
+                  <p style="font-size: 30px;text-align: center;">THANK YOU</p>
+
+                  <br>
+                </div>
+              </div>
+  
+        
+      
+
+
+
+
+</body>
+
+</html>
